@@ -14,6 +14,6 @@ $ crontab -e
 ```
 Paste this into crontab:
 ```
-*/15 * * * * env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/python3 [Repo Path]/wallpaper.py
-@reboot env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/python3 [Repo Path]/wallpaper.py
+*/15 * * * * env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/python3 [Repo Path]/wallpaper.py '[City You Live In]'
+@reboot env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus /usr/bin/python3 [Repo Path]/wallpaper.py '[City You Live In]'
 ```
