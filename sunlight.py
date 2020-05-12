@@ -1,11 +1,10 @@
 import datetime
-from astral import Astral
+from astral.sun import sun
+from astral.geocoder import database, lookup
 
 def getSun(city_name):
-	a = Astral()
-	a.solar_depression = 'civil'
-	city = a[city_name]
-	return city.sun(date=datetime.date.today(), local=True)
+	city = lookup(city_name, database())
+	return sun(city.observer, date=datetime.date.today())
 
 def timeOfDayToSeconds(timeOfDay):
 	timeDelta = datetime.timedelta(hours=timeOfDay.hour, minutes=timeOfDay.minute, seconds=timeOfDay.second)
